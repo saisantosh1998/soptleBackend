@@ -19,7 +19,7 @@ const createUser = async (user) => {
     const result = await User.create(user);
     return result;
   } else {
-    throw new ApiError(httpStatus.OK, "Email already taken");
+    throw new ApiError(httpStatus.BAD_REQUEST, "Email already taken");
   }
 };
 
